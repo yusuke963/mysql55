@@ -8,6 +8,8 @@
   # OSのタイムゾーンをJSTに変更。
     shell: cp -p  /usr/share/zoneinfo/Japan /etc/localtime
 
+  - yum: name=libselinux-python state=present
+  
   - name: EPELとRemiのレポジトリをインストールする。
   # EPEL/Remiのレポジトリをインストールする
     yum: name={{ item }}
